@@ -1,0 +1,33 @@
+#Script with input:
+text= []
+text= input("Input text here: ").lower()
+first= input("Input first letter: ").lower()
+second= input("Input second letter: ").lower()
+find_letters= []
+errors=1
+pos2= 0
+def main():
+    global find_letters,first
+    for letter in range(len(text)):
+        if first == text[letter]:
+            find_letters.append(letter)
+            continue
+    for pos1 in find_letters:
+        pos2= text[pos1+1]
+        if pos2==second:
+            continue
+        else:
+            errors=0
+            print("False")
+            print("Error in:",pos1+1)
+            return errors
+    if find_letters == []:
+        print("False")
+        print("Not finded at all.")
+        errors=0
+        return errors
+    else:
+        print("True")
+        print("Finded at:",find_letters)
+        return True
+main()
